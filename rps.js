@@ -27,3 +27,41 @@ function getHumanChoice() {
         return "rock";
     }
 }
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        console.log(`It's a tie! You both played ${humanChoice}!`);
+        humanScore++;
+        computerScore++;
+    } else if (humanChoice === "rock") {
+        switch (computerChoice) {
+            case "paper":
+                console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+                computerScore++;
+                break;
+            case "scissors":
+                console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+                humanScore++;
+        }
+    } else if (humanChoice === "paper") {
+        switch (computerChoice) {
+            case "rock":
+                console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+                humanScore++;
+                break;
+            case "scissors":
+                console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+                computerScore++;
+        }
+    } else { // humanChoice === "scissors"
+        switch (computerChoice) {
+            case "rock":
+                console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+                computerScore++;
+                break;
+            case "paper":
+                console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+                humanScore++;
+        }
+    }
+}

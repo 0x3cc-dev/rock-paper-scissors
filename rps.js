@@ -56,7 +56,8 @@ function playGame() {
                 case "paper":
                     messages.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
                     computerScore++;
-                    computerScoreDisplay.textContent = `CPU: ${computerScore}`;                    break;
+                    computerScoreDisplay.textContent = `CPU: ${computerScore}`;
+                    break;
                 case "scissors":
                     messages.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
                     humanScore++;
@@ -86,6 +87,20 @@ function playGame() {
                     humanScore++;
                     humanScoreDisplay.textContent = `You: ${humanScore}`;
             }
+        }
+
+        if (humanScore === 5 || computerScore === 5) {
+            if (humanScore === computerScore) {
+                messages.textContent = "The game is over, and it's a tie!";
+            } else if (humanScore > computerScore) {
+                messages.textContent = "The game is over, and you won!";
+            } else {
+                messages.textContent = "The game is over, and you lost!";
+            }
+
+            buttons.forEach((button) => {
+                button.disabled = "true";
+            });
         }
     }
 }

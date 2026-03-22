@@ -37,6 +37,7 @@ function playGame() {
     });
 
     const messages = document.querySelector(".messages");
+    messages.textContent = "Welcome to Rock - Paper - Scissors!";
 
     const humanScoreDisplay = document.querySelector(".human-score");
     const computerScoreDisplay = document.querySelector(".computer-score");

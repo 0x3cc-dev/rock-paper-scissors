@@ -38,40 +38,53 @@ function playGame() {
 
     const messages = document.querySelector(".messages");
 
+    const humanScoreDisplay = document.querySelector(".human-score");
+    const computerScoreDisplay = document.querySelector(".computer-score");
+
+    humanScoreDisplay.textContent = `You: ${humanScore}`;
+    computerScoreDisplay.textContent = `CPU: ${computerScore}`;
+
     function playRound(humanChoice, computerChoice) {
         if (humanChoice === computerChoice) {
             messages.textContent = `It's a tie! You both played ${humanChoice}!`;
             humanScore++;
             computerScore++;
+            humanScoreDisplay.textContent = `You: ${humanScore}`;
+            computerScoreDisplay.textContent = `CPU: ${computerScore}`;
         } else if (humanChoice === "rock") {
             switch (computerChoice) {
                 case "paper":
                     messages.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
                     computerScore++;
-                    break;
+                    computerScoreDisplay.textContent = `CPU: ${computerScore}`;                    break;
                 case "scissors":
                     messages.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
                     humanScore++;
+                    humanScoreDisplay.textContent = `You: ${humanScore}`;
             }
         } else if (humanChoice === "paper") {
             switch (computerChoice) {
                 case "rock":
                     messages.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
                     humanScore++;
+                    humanScoreDisplay.textContent = `You: ${humanScore}`;
                     break;
                 case "scissors":
                     messages.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
                     computerScore++;
+                    computerScoreDisplay.textContent = `CPU: ${computerScore}`;
             }
         } else { // humanChoice === "scissors"
             switch (computerChoice) {
                 case "rock":
                     messages.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
                     computerScore++;
+                    computerScoreDisplay.textContent = `CPU: ${computerScore}`;
                     break;
                 case "paper":
                     messages.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
                     humanScore++;
+                    humanScoreDisplay.textContent = `You: ${humanScore}`;
             }
         }
     }

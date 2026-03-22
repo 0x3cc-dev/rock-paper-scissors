@@ -17,3 +17,8 @@ body {
 .messages {
     font-size: 28px;
 }
+
+.human-score,
+.computer-score {
+    font-size: 64px;
+}

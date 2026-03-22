@@ -29,12 +29,6 @@ function playGame() {
     let computerScore = 0;
     let humanScore = 0;
 
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-
     const message = humanScore >= computerScore ? `You did well! You: ${humanScore} / Computer: ${computerScore}.` : `You lose ${computerScore} against ${humanScore}.`;
     console.log(message);
 

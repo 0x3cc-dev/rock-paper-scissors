@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./rps.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <script src="./rps.js" defer></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="human-score"></div>
+        <div class="buttons">
+            <button class="choice-buttons" id="rock">✊</button>
+            <button class="choice-buttons" id="paper">✋</button>
+            <button class="choice-buttons" id="scissors">✌️</button>
+        </div>
+        <div class="computer-score"></div>
+    </div>
+    <div class="messages"></div>
 </body>
 </html>

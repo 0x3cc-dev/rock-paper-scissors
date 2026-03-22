@@ -29,8 +29,12 @@ function playGame() {
     let computerScore = 0;
     let humanScore = 0;
 
-    const message = humanScore >= computerScore ? `You did well! You: ${humanScore} / Computer: ${computerScore}.` : `You lose ${computerScore} against ${humanScore}.`;
-    console.log(message);
+    const buttons = document.querySelectorAll(".choice-buttons");
+    buttons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            playRound(button.id, getComputerChoice());
+        });
+    });
 
     function playRound(humanChoice, computerChoice) {
         if (humanChoice === computerChoice) {

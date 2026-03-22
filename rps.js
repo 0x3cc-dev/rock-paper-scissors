@@ -36,39 +36,41 @@ function playGame() {
         });
     });
 
+    const messages = document.querySelector(".messages");
+
     function playRound(humanChoice, computerChoice) {
         if (humanChoice === computerChoice) {
-            console.log(`It's a tie! You both played ${humanChoice}!`);
+            messages.textContent = `It's a tie! You both played ${humanChoice}!`;
             humanScore++;
             computerScore++;
         } else if (humanChoice === "rock") {
             switch (computerChoice) {
                 case "paper":
-                    console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+                    messages.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
                     computerScore++;
                     break;
                 case "scissors":
-                    console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+                    messages.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
                     humanScore++;
             }
         } else if (humanChoice === "paper") {
             switch (computerChoice) {
                 case "rock":
-                    console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+                    messages.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
                     humanScore++;
                     break;
                 case "scissors":
-                    console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+                    messages.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
                     computerScore++;
             }
         } else { // humanChoice === "scissors"
             switch (computerChoice) {
                 case "rock":
-                    console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+                    messages.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
                     computerScore++;
                     break;
                 case "paper":
-                    console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+                    messages.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
                     humanScore++;
             }
         }

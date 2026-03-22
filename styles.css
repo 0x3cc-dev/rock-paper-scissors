@@ -13,3 +13,7 @@ body {
     padding: 24px;
     border-radius: 50px;
 }
+
+.messages {
+    font-size: 28px;
+}
